@@ -3,6 +3,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@dashboards/*": [ "projects/lib/dashboards/src/lib/components/*" ],
+      "@strapi/*": ["projects/lib/strapi/src/lib/components/*"],
+      "@shared/*": ["projects/lib/shared/src/lib/*"]
+    },
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
