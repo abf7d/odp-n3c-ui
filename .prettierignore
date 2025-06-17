@@ -1,0 +1,10 @@
+/coverage
+/build
+/dist
+/images
+*.json
+CHANGELOG.md
+*.yml
+index.js
+node_modules/
+
