@@ -14,15 +14,19 @@
       "sourceRoot": "projects/n3c-app/src",
       "prefix": "app",
       "architect": {
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/n3c-app/src/**/*.ts", "projects/n3c-app/src/**/*.html"]
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/n3c-app",
             "index": "projects/n3c-app/src/index.html",
             "browser": "projects/n3c-app/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/n3c-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -31,9 +35,7 @@
                 "input": "projects/n3c-app/public"
               }
             ],
-            "styles": [
-              "projects/n3c-app/src/styles.scss"
-            ],
+            "styles": ["projects/n3c-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -78,10 +80,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/n3c-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -90,9 +89,7 @@
                 "input": "projects/n3c-app/public"
               }
             ],
-            "styles": [
-              "projects/n3c-app/src/styles.scss"
-            ],
+            "styles": ["projects/n3c-app/src/styles.scss"],
             "scripts": []
           }
         }
@@ -107,10 +104,17 @@
         "@schematics/angular:component": {
           "standalone": true,
           "skipImport": true,
-          "style": "scss" 
+          "style": "scss"
         }
       },
-      "targets": {}  
+      "targets": {
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/lib/dashboards/src/**/*.ts", "projects/lib/dashboards/src/**/*.html"]
+          }
+        }
+      }
     },
     "strapi": {
       "projectType": "library",
@@ -121,10 +125,17 @@
         "@schematics/angular:component": {
           "standalone": true,
           "skipImport": true,
-          "style": "scss" 
+          "style": "scss"
         }
       },
-      "targets": {}  
+      "targets": {
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/lib/strapi/src/**/*.ts", "projects/lib/strapi/src/**/*.html"]
+          }
+        }
+      }
     },
     "shared": {
       "projectType": "library",
@@ -135,11 +146,20 @@
         "@schematics/angular:component": {
           "standalone": true,
           "skipImport": true,
-          "style": "scss" 
+          "style": "scss"
         }
       },
-      "targets": {}  
+      "targets": {
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/lib/shared/src/**/*.ts", "projects/lib/shared/src/**/*.html"]
+          }
+        }
+      }
     }
-
+  },
+  "cli": {
+    "analytics": false
   }
 }
