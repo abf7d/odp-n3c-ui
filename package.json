@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint:n3c-app": "ng lint n3c-app",
+    "lint:dashboards": "ng lint dashboards",
+    "lint:strapi": "ng lint strapi",
+    "lint:shared": "ng lint shared"
   },
   "private": true,
   "dependencies": {
